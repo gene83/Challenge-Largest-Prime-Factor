@@ -1,6 +1,5 @@
 exports.largestPrimeFactor = function(n) {
   const primeFactors = [];
-  debugger;
   while (n % 2 === 0) {
     primeFactors.push(2);
     n = n / 2;
