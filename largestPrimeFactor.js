@@ -1,6 +1,21 @@
-exports.largestPrimeFactor = function(n){
-  var primeNumber = 0;
-  // do your work here
+exports.largestPrimeFactor = function(n) {
+  const primeFactors = [];
+  debugger;
+  while (n % 2 === 0) {
+    primeFactors.push(2);
+    n = n / 2;
+  }
 
-  return primeNumber;
+  for (let i = 3; i <= Math.sqrt(n); i++) {
+    while (n % i === 0) {
+      primeFactors.push(i);
+      n = n / i;
+    }
+  }
+
+  if (n > 2) {
+    primeFactors.push(n);
+  }
+
+  return primeFactors.pop();
 };
